@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Validation</title>
+    <script type="text/Javascript">
+        function phoneval()
+         {
+            Phoneno=(document.getElementById("phnum").value);
+            phonenoid=(document.getElementById("error"));
+            if (Phoneno.length==0)
+            {
+             phonenoid.textContent="Please enter your phone Number";
+             phonenoid.style.color="red";  
+            }
+            else if (Phoneno.length==8)
+            {
+             phonenoid.textContent="Valid Number";
+             phonenoid.style.color="green";  
+            }
+            else if (Phoneno.length<8)
+            {
+             phonenoid.textContent="Number should not be less then 8 digits";
+             phonenoid.style.color="red";  
+            }
+            else if (Phoneno.length>10)
+            {
+             phonenoid.textContent="Number should not be less then 10 digits";
+             phonenoid.style.color="red";  
+            }
+            else if (Phoneno.length==10)
+            {
+             phonenoid.textContent="Valid Number";
+             phonenoid.style.color="green";  
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+       <h3><b>Please enter your Number</b></h3><br>
+        <div>
+    Phone Number: <input type="number" id="phnum" onblur="phoneval()"><br>
+    <div id="error"></div><br>
+    <input type="button" value="submit">
+        </div>
+    </form>
+</body>
+</html>

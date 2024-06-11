@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector Control</title>
+    <STYle>
+        body{background-color: burlywood;
+         text-align: center;
+        }
+        div{
+             
+            border: 2PX solid black;
+            width: 300px;
+            padding: 10PX;
+            margin:-25px 0 0 -25px;
+            background-color: palevioletred;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+             
+        }
+        button{
+            background-color: GREY;
+            text-align: center;
+        }
+    </STYle>
+    <script>
+        function loading() {
+            state=document.getElementById("state").value;
+            city=document.getElementById("cities");
+            while (city.options.length>1) {
+                city.remove(1)
+            }
+            if (state=="Telangana") {
+                city.add(new Option("Hyderabad","Hyderabad"),undefined)
+                city.add(new Option("Secundrabad","Secundrabad"),undefined)
+                city.add(new Option("Sangareddy","Sangareddy"),undefined)
+                city.add(new Option("Solakpally","Solakpally"),undefined)
+                city.add(new Option("Warangal","warangal"),undefined)
+            }
+            else if (state=="Andhra Pradesh") {
+                city.add(new Option("Amaravathi","Amaravathi"),undefined)
+                city.add(new Option("Kurnool","Kurnool"),undefined)
+                city.add(new Option("Vizag","Vizag"),undefined)
+                city.add(new Option("Tirupathi","Tirupathi"),undefined)
+                city.add(new Option("Annavaram","ANNAVARAM"),undefined)
+            }
+            else {
+                city.add(new Option("Raipur","Raipur"),undefined)
+                city.add(new Option("Gorakpur","Gorakpur"),undefined)
+                city.add(new Option("Banswada","Banswada"),undefined)
+                city.add(new Option("Kothipur","Kothipur"),undefined)
+                city.add(new Option("Harami","Harami"),undefined)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <DIV> 
+    <form>
+        <b>Choose State and Your City :</b><br><br>
+        <select id="state" onchange="loading()">
+            <option disabled selected>--Choose state--</option>
+            <option >Telangana</option>
+            <option >Andhra Pradesh</option>
+            <option >Chattisgarh</option>
+        </select>
+        <select id="cities">
+            <option disabled selected >--Choose city--</option>
+        </select><br><br>
+        <button>Submit</button>
+    </form>
+    </DIV>
+</body>
+</html>

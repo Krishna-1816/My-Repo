@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <STYle>
+        #emailmsg
+        {color: red;}
+
+        form{
+            border: 3px solid black;
+            width: 300px;
+            padding: 10PX;
+            margin:-25px 0 0 -25px;
+            background-color: rgb(99, 94, 96);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        BODY{
+            background-color: darkgray;
+            text-align: center;
+        }
+        button{
+            background-color: GREY;
+            text-align: center;
+        }
+    </STYle>
+    <script>
+        function emailvalid(){
+        email=document.getElementById("emailbox").value;
+        emailmsg=document.getElementById("emailmsg");
+        eRegExp=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email.length==0) {
+            emailmsg.textContent="*please enter mail, it should not be empty";
+        }
+        else if (eRegExp.test(email)) {
+            emailmsg.textContent="*Valid mail Id.";
+            emailmsg.style.color="green";
+        }
+        else {
+            emailmsg.textContent="*Invalid mailid, it must have upper case lowercase,numerics,and special chars.";
+        }
+    }
+    function Passwordval()
+         {
+            Password=(document.getElementById("Password").value);
+            regExpression=/^[A-Z]+[a-z]+[@#$%!]+[1-9]+$/;
+            passmsg=(document.getElementById("passmsg"));
+            if (Password.length==0)
+            {
+             passmsg.textContent="*Password field should not be empty";
+             passmsg.style.color="red";  
+            }
+            else if (!regExpression.test(Password))
+            {
+             passmsg.textContent="password must uppercase,lowercase,special chars,numericals";
+             passmsg.style.color="red";  
+            }
+            else if (Password.length<6||Password.length>16)
+            {
+             passmsg.textContent="Password length min=6 and max=16";
+             passmsg.style.color="red";  
+            }
+            else 
+            {
+             passmsg.textContent="Password is valid";
+             passmsg.style.color="green";  
+            }
+        }
+    </script>
+ </head>
+ <body>
+    <form >
+    <B>Email Validation</B><br><br>
+    <div>
+    <label>Enter Your Email</label><br>
+    <input type="text" id="emailbox" onblur="emailvalid()"><br>
+    <div id="emailmsg"></div>
+    </div>
+    <div>
+    <label>Enter your Password</label><br>
+    <input type="password" id="Password" onblur="Passwordval()"><br>
+    <div id="passmsg"></div>
+    </div><br>
+    <button>Submit</button>
+    </FORM>
+ </body>
+ </html>

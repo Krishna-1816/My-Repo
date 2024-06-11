@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddForm</title>
+    <script type="text/Javascript">
+        function f1()
+        {
+            a=Number(document.getElementById("t1").value);
+            b=Number(document.getElementById("t2").value);
+            c=a+b;
+            document.getElementById("t3").value=c;
+        }
+        function f2()
+        {
+            a=Number(document.getElementById("t1").value);
+            b=Number(document.getElementById("t2").value);
+            c=a-b;
+            document.getElementById("t3").value=c;
+        }
+        function f3()
+        {
+            a=Number(document.getElementById("t1").value);
+            b=Number(document.getElementById("t2").value);
+            c=a/b;
+            document.getElementById("t3").value=c;
+        }
+        function f4()
+        {
+            a=Number(document.getElementById("t1").value);
+            b=Number(document.getElementById("t2").value);
+            c=a%b;
+            document.getElementById("t3").value=c;
+        }
+    </script>
+</head>
+<body>
+    Number 1: <input type="text" id="t1"><br>
+    Number 2: <input type="text" id="t2"><br>
+    Result: <input type="text" id="t3"><br>
+    <input type="button" value="Add" onclick="f1()">
+    <input type="button" value="sub" onclick="f2()">
+    <input type="button" value="div" onclick="f3()">
+    <input type="button" value="per%" onclick="f4()">
+</body>
+</html>

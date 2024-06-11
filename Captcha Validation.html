@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Generator</title>
+    <style>
+        body{
+              background-image:url('C:\\Users\\user\\Desktop\\shivaji-maharaj-throne-silhouette-hd-ndcs7i1wpfqed8f1.jpg');
+              /*background-size: 100%;
+              background-repeat: no-repeat;
+              background-attachment: fixed;*/
+        }
+        button{
+            width: 450px;
+            /*margin: 10px 0px;*/
+            border-radius: 8px;
+            font-size:16px;
+            cursor: pointer;
+            /*height: 35px;*/
+            padding: 8px;
+            background-color: aqua;
+        }
+        label{
+
+            font-size: 20px;
+            display: block;
+            margin: 10px 0px;
+            font-weight: bold;
+        }
+        form{
+            border: 1px  solid grey;
+            padding: 20px;
+            width: 500px;
+            margin:10px auto;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+             
+        }
+        #capid{
+            background-color: dimgrey;
+            padding: 8px;
+            width: 200px;
+            font-size: 20px;
+            color: rgv(177,174,174);
+            border-radius: 8px;
+            font-weight: bold;
+             
+        }
+        input{
+            width: 450px;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function emailvalid(){
+        email=document.getElementById("emailbox").value;
+        emailmsg=document.getElementById("emailmsg");
+        eRegExp=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email.length==0) {
+            emailmsg.textContent="*please enter mail, it should not be empty";
+            emailmsg.style.color="RED";
+        }
+        else if (eRegExp.test(email)) {
+            emailmsg.textContent="*Valid mail Id.";
+            emailmsg.style.color="green";
+        }
+        else {
+            emailmsg.textContent="*Invalid mailid, it must have upper case lowercase,numerics,and special chars.";
+        }
+    }
+    function Passwordval()
+         {
+            Password=(document.getElementById("Password").value);
+            regExpression=/^[A-Z]+[a-z]+[@#$%!]+[1-9]+$/;
+            passmsg=(document.getElementById("passmsg"));
+            if (Password.length==0)
+            {
+             passmsg.textContent="*Password field should not be empty";
+             passmsg.style.color="red";  
+            }
+            else if (!regExpression.test(Password))
+            {
+             passmsg.textContent="password must uppercase,lowercase,special chars,numericals";
+             passmsg.style.color="red";  
+            }
+            else if (Password.length<6||Password.length>16)
+            {
+             passmsg.textContent="Password length min=6 and max=16";
+             passmsg.style.color="red";  
+            }
+            else 
+            {
+             passmsg.textContent="Password is valid";
+             passmsg.style.color="green";  
+            }
+        }
+        function otpgenerator() {
+            data="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            len=data.length;
+            otp="";
+            for (let i=0; i<6; i++) {
+                otp=otp+data[Math.floor(Math.random()*len)];
+            }
+            document.getElementById("capid").textContent=otp;
+        }
+        function Captchavalidation() {
+            captchagen=document.getElementById("capid").textContent;
+            cap=document.getElementById("cap").value;
+            if (cap.length==0) {
+                alert("Please Enter Captcha")
+                document.getElementById("cap").focus();
+                return false;
+            }
+            else if (captchagen!=cap) {
+                alert("Invalid Captcha Try again")
+                document.getElementById("cap").focus();
+                return false;
+            }
+            else {
+                alert("Captcha validation Sucessfull..")
+                return true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body onload="otpgenerator()">
+    <FORM onsubmit="Captchavalidation()">
+        <h3>Email Verification</h3>
+        <label for="">Email</label>
+        <input type="text" id="emailbox" placeholder="Enter Your Email" onblur="emailvalid()"><br>
+        <div id="emailmsg"></div>
+        <label for="">Password</label>
+        <input type="password" id="Password" placeholder="Enter Your Password" onblur="Passwordval()"><br>
+        <div id="passmsg"></div>
+        <label for="">Captcha</label>
+        <label for="" id="capid"></label>
+        <input type="text" id="cap" placeholder="Enter Captcha"><br><br>
+         <button>Submit</button>
+
+    </FORM>
+</body>
+</html>

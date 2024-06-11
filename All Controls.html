@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Controls</title>
+    <script>
+        function controls() 
+        {
+            alert("sdfdsfdsfd");
+            Name=document.getElementById("name").value;
+            Age=document.getElementById("age").value;
+            Dob=document.getElementById("date").value;
+            if (document.getElementById("F").checked==true) {
+                Gender=document.getElementById("F").value;
+            }
+            else{
+            Gender=document.getElementById("M").value;
+            }
+
+            Email=document.getElementById("mail").value;
+            Password=document.getElementById("Password").value;
+            Resume=document.getElementById("Resume").value;
+            hobbie1=document.getElementById("hobbie1").value;
+            hobbie2=document.getElementById("hobbie2").value;
+            if(hobbie1.checked==true && hobbie2.checked==true)
+            Hobbie="Cricket,Kabbadi";
+            else if(hobbie1.checked==true)
+            {Hobbie="Cricket";}
+            else if(hobbie2.checked==true)
+            {Hobbies="Kabbadi";}
+            Country=document.getElementById("Country").value;
+            City=document.getElementById("City").value;
+            Adress=document.getElementById("adress").value;
+            op=document.getElementById("opt");
+            op.textContent="Name : "+Name+"</br>"+"Age : "+Age+"</br>"+"Dob : "+Dob+"</br>"+"Gender : "+Gender+"</br>"+"Email : "+Email+",/br>"+"Password : "+Password+"</br>"+"Resume : +"+Resume+"</br>"+"Hobbies : "+Hobbies+"</br>"+"Country : "+Country+"</br>"+"City : "+City+"</br>"+"Adress : "+Adress+"</br>";
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <h3>Registration Form </h3>
+        <table>
+            <tr>
+                <td>
+                    <label>Name : </label>
+                </td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <TD>
+                    <label>Age : </label>
+                </TD>
+                <td>
+                    <input type="text" id="age" size="2" maxlength="2">
+                </td>
+            <tr>
+            <tr>
+                <td>
+                    <label>Dob : </label>
+                </td>
+                <td>
+                    <input type="date" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Gender : </label>
+                </td>
+                <td>
+                    <input type="radio" name="Gender" id="M" value="Male">Male
+                    <input type="radio" name="Gender" id="F" value="Female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email : </label>
+                </td>
+                <td>
+                    <input type="text" id="mail">
+                    <button>Check</button>
+                </td>
+             </tr>
+            <tr>
+            <td>
+                <label>Password : </label>
+            </td>
+            <td>
+                <input type="password" id="Password">
+            </td>
+            </tr>
+         <tr>
+            <td>
+                <label>Resume : </label>
+            </td>
+            <td>
+                <input type="file" id="Resume">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Hobbies : </label>
+            </td>
+            <td>
+                <input type="checkbox" id="hobbie1" >Cricket
+                <input type="checkbox" id="hobbie2" >Kabaddi
+            </td>
+        </tr>
+        <tr>
+                <td>
+                    <label>Country : </label>
+                </td>
+                <td>
+                    <input type="text" id="Country">
+                </td>
+            </tr>
+        <tr>
+            <td>
+                <label>City</label>
+            </td>
+            <td>
+                <select id="City">
+                    <option disabled selected>--choose city--</option>
+                    <optgroup label="metros">
+                        <option value="">New delhi</option>
+                        <option value="">Hyderabad</option>
+                        <option value="">Banglore</option>
+                        <option value="">Chennai</option>
+                    </optgroup>
+                    <optgroup label="Others">
+                        <OPtion>Raipur</OPtion>
+                        <option>Sangareddy</option>
+                        <option>Warangal</option>
+                        <option>Yadadri</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Adress : </label>
+            </td>
+            <td>
+                <textarea rows="4" cols="40" id="adress"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Submit" onclick="controls()">
+                <input type="reset">
+            </td>
+        </tr>
+        </table>
+        <output id="opt"></output>
+    </form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button</title>
+    <style>
+        b{
+            color: blueviolet;
+        }
+        #output{
+            color: green;
+        }
+        h4{
+            color: red;
+        }
+    </style>
+    <script>
+        /* function checkbutton() {
+            if (document.getElementById("Mechanical").checked) {
+                document.getElementById("output").textContent
+                =document.getElementById("Mechanical").value+" is selected";
+            }
+            else if (document.getElementById("Civil").checked) {
+                document.getElementById("output").textContent=
+                document.getElementById("Civil").value+" is selected";
+            }
+            else if (document.getElementById("Electrical").checked) {
+                document.getElementById("output").textContent=
+                document.getElementById("Electrical").value+" is selected";
+            }
+            else if (document.getElementById("Electronics").checked) {
+                document.getElementById("output").textContent=
+                document.getElementById("Electronics").value+" is selected";
+            }
+            else {
+                document.getElementById("error").textContent=" You have not Selected any Option";
+            }
+        } */
+        
+        function checkbutton() {
+            selectedvalue=document.querySelector("input[name=Branch]:checked");
+            if (selectedvalue!=null) {
+                document.getElementById("output").textContent=
+                selectedvalue.value+" is Selected"
+                
+            }
+            else {
+                document.getElementById("error").textContent=" You have not Selected any Option";
+            }
+        }
+    </script>
+</head>
+<body>
+    <b>Choose the Branch You Want :</b> <br>
+          <input type="radio" name="Branch" id="Mechanical" value="Mechanical">Mechanical <br>
+          <input type="radio" name="Branch" id="Civil" value="Civill">Civil <br>
+          <input type="radio" name="Branch" id="Electrical" value="Electrical">Electrical <br>
+          <input type="radio" name="Branch" id="Electronics" value="Electronics">Electronics <br><br>
+
+          <button onclick="checkbutton()">Submit</button>
+          <h4 id="output"></h4>
+           <h4 id="error"></h4>
+</body>
+</html>

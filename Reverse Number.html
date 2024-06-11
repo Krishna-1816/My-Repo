@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Number</title>
+    <script type="text/Javascript">
+        function rev()
+         {
+            n=Number(document.getElementById("num").value);
+            sum=0;
+            while(n>0)
+            {
+                r=n%10;
+                sum=(sum*10)+r;
+                //sum=sum+r; for sum of digits.
+                n=parseInt(n/10);
+            }
+            document.getElementById("res").value=sum;
+        }
+    </script>
+</head>
+<body>
+    <form>
+    Enter Your Number: <input type="text" id="num"><br>
+    Result: <input type="text" id="res"><br>
+    <input type="button" value="Reverse" onclick="rev()">
+    </form>
+</body>
+</html>
